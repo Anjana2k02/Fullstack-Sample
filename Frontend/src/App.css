@@ -1,0 +1,148 @@
+:root {
+  --primary-color: rgba(255, 255, 255, 0.8);
+  --secondary-color: rgba(255, 255, 255, 0.6);
+  --accent-color: #007AFF;
+  --background-blur: 20px;
+  --form-background: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #1A535C);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.form-container {
+  background: var(--form-background);
+  backdrop-filter: blur(var(--background-blur));
+  -webkit-backdrop-filter: blur(var(--background-blur));
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+input {
+  width: 92%;
+  padding: 0.75rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+.submit-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50%;
+  align-self: center;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Accessibility */
+input:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Placeholder styling */
+input::placeholder {
+  color: var(--secondary-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
